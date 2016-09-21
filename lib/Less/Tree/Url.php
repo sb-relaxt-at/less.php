@@ -58,7 +58,7 @@ class Less_Tree_Url extends Less_Tree{
 
 		// Add cache buster if enabled
 		if( Less_Parser::$options['urlArgs'] ){
-			if( !preg_match('/^\s*data:/',$val->value) ){
+			if( !preg_match('/^"?\s*data:/',$val->value) ){
 				$delimiter = strpos($val->value,'?') === false ? '?' : '&';
 				$urlArgs = $delimiter . Less_Parser::$options['urlArgs'];
 				$hash_pos = strpos($val->value,'#');
